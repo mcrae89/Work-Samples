@@ -1,0 +1,4 @@
+Products(upc*: STRING, product_name: STRING, last_updated_date: DATE/TIME)
+Reviews(ID*: INT, productID: INT, username: STRING, review: STRING, review_date: DATE/TIME, last_updated_Date: DATE/TIME)
+Prices(ID*: INT, productID: INT, price: Float, last_updated_Date: Date/Time)
+Ratings(ID*: INT, productID: INT, avg_rating: FLOAT, number_of_ratings: INT)

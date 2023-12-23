@@ -1,0 +1,35 @@
+erdiagram database
+notation = crowsfoot
+
+entity Products {
+    upc key
+    product_name
+    last_updated_date
+}
+
+entity Prices {
+    ID key
+    price
+    last_updated_date
+}
+
+entity Ratings {
+    ID key
+    rating
+    source
+    last_updated_date
+}
+
+entity Reviews {
+    ID key
+    username
+    review
+    review_date
+    last_updated_date
+}
+
+relationship have {
+    Products[1] -> Reviews[0..N]
+    Products[1] -> Prices[0..N]
+    Products[1] -> Ratings[0..N]
+}

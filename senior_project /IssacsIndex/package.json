@@ -1,0 +1,31 @@
+{
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "dependencies": {
+    "axios": "^1.5.1",
+    "chai": "^4.3.10",
+    "cheerio": "^1.0.0-rc.12",
+    "jsdom": "^23.0.1",
+    "pg": "^8.11.3",
+    "playwright": "^1.38.1",
+    "playwright-extra": "^4.3.6",
+    "puppeteer": "^21.3.8",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "setimmediate": "^1.0.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.39.0",
+    "@types/node": "^20.8.9",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "heroku-postbuild": "npx playwright install chromium"
+  },
+  "jest": {
+    "testEnvironment": "jest-environment-jsdom"
+  }
+}
