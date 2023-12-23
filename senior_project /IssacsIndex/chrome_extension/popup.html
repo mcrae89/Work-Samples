@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Issac's Index</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            width: 80%;
+            width: 450px;
+        }
+        img {
+            width: 100px;
+            height: auto;
+            margin-top: 20px;
+        }
+        .scrollable-container {
+            width: 450px;
+            /* overflow-y: auto; */
+            font-family: "Century Gothic";
+        }
+
+        .record-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;  /* slightly rounded edges */
+            padding: 8px 12px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .record-price:hover {
+            background-color: #E7E6E6;
+        }
+
+        .logo-cell {
+            flex-basis: 20%;
+            padding: 0 1%;
+        }
+
+        .logo-cell img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .name-cell {
+            flex-basis: 20%;
+            text-align: left;
+            padding: 0 1%;
+        }
+
+        .product-cell {
+            flex-basis: 40%;
+            text-align: left;
+            padding: 0 1%;
+        }
+
+        .price-cell {
+            flex-basis: 20%;
+            text-align: right;
+            padding: 0 1%;
+        }
+
+        .review-row, .review-product-cell, .review-cell {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px; /* Adds some space between rows */
+        }
+
+        .username-cell, .date-cell {
+            flex-basis: calc(50% - 16px); /* Adjusts width of each cell to be one-third */
+            padding: 0 8px;
+            text-align: left;
+        }
+
+        .record-review {
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            margin-top: 10px;
+            padding: 8px 12px;
+        }
+
+    </style>
+</head>
+<body style="background-color: #E7E6E6;">
+    <!-- Initial Loading Content -->
+    <div class="container pt-3" id="loadingContent">
+        <h1 class="text-center">Issac's Index</h1>
+        <h2>Product Details have not been found yet.</h2>
+        <img src="images/issacLoading.gif" alt="Product Details Not Found">
+    </div>
+
+    <!-- Product Details Content (Initially Hidden) -->
+    <div class="scrollable-container" id="productDetails" style="display: none; max-height: 400px">
+        <div class="col-md-12" style="display: flex;flex-direction: column;align-content: center;flex-wrap: wrap;align-items: center;">
+            <div style="font-size: 2em;">Issac's Index</div>
+            <div>We found more prices!</div>
+            <!-- link to Issac's Index website -->
+            <a href="" id="websiteLink" class="text-center">Read reviews across all stores</a>
+        </div>
+        <div class="accordion" id="accordion" style="margin-top:1em; overflow-y: auto;">
+            <div class="accordion-item" style="background-color: white;">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#prices" aria-expanded="false" aria-controls="prices">
+                        Prices
+                    </button>
+                </h2>
+                <div id="prices" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <!-- Prices will be populated by popup.js -->
+                        <p>No prices data available.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item" style="background-color: white;">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#reviews" aria-expanded="false" aria-controls="reviews">
+                        Reviews
+                    </button>
+                </h2>
+                <div id="reviews" class="accordion-collapse collapse">
+                    <div class="accordion-body" style="padding-left: .5em; padding-right: .5em">
+                        <!-- Reviews will be populated by popup.js -->
+                        <p>No reviews data available.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>
